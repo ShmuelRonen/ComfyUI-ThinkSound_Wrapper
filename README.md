@@ -21,7 +21,7 @@ ThinkSound uses **multimodal AI** to understand both text and video:
 ## 📋 Requirements
 
 ### System Requirements
-- **NVIDIA GPU** with at least 8GB VRAM (12GB+ recommended)
+- **NVIDIA GPU** with at least 12GB VRAM (24GB+ recommended)
 - **Python 3.8+**
 - **ComfyUI** installed and working
 - **Windows/Linux** (tested on Windows)
