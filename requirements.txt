@@ -1,0 +1,28 @@
+# ThinkSound ComfyUI Requirements
+# Core dependencies needed for ThinkSound functionality
+
+
+# Critical ThinkSound dependencies (these were missing and caused errors)
+alias-free-torch==0.0.6
+descript-audio-codec==1.0.0
+vector-quantize-pytorch==1.9.14
+
+# Essential for functionality
+einops==0.7.0
+open-clip-torch>=2.20.0
+huggingface_hub
+safetensors
+sentencepiece>=0.1.99
+tqdm
+
+# Optional but recommended for full compatibility
+auraloss==0.4.0
+encodec==0.1.1
+lightning>=2.0.0
+einops-exts==0.0.4
+ema-pytorch==0.2.3
+k-diffusion==0.1.1
+PyWavelets==1.4.1
+pandas>=2.0.0
+importlib-resources>=5.0.0
+
