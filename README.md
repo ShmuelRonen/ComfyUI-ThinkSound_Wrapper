@@ -2,6 +2,9 @@
 
 A ComfyUI wrapper implementation of **ThinkSound** - an advanced AI model for generating high-quality audio from text descriptions and video content using Chain-of-Thought (CoT) reasoning.
 
+<img width="2691" height="1432" alt="image" src="https://github.com/user-attachments/assets/e942b754-b981-49d1-bfc4-8c64732ae35b" />
+
+
 ## 🎵 Features
 
 - **Text-to-Audio Generation**: Create audio from detailed text descriptions
