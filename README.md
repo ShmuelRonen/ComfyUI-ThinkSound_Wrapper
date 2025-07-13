@@ -5,6 +5,11 @@ A ComfyUI wrapper implementation of **ThinkSound** - an advanced AI model for ge
 <img width="2989" height="1324" alt="image" src="https://github.com/user-attachments/assets/aae9c5a4-6113-4d20-809f-307aa2202086" />
 
 
+https://github.com/user-attachments/assets/b3f090a7-fe58-4bb0-8e21-cb19377aa9cf
+
+
+
+
 ## 🎵 Features
 
 - **Text-to-Audio Generation**: Create audio from detailed text descriptions
