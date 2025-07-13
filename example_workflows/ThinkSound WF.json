@@ -1,0 +1,717 @@
+{
+  "id": "0d318175-389c-4666-ae08-1cf55d02242a",
+  "revision": 0,
+  "last_node_id": 136,
+  "last_link_id": 237,
+  "nodes": [
+    {
+      "id": 126,
+      "type": "GetNode",
+      "pos": [
+        2693.869873046875,
+        38.80233383178711
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            222
+          ]
+        }
+      ],
+      "title": "Get_image",
+      "properties": {
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "image"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 128,
+      "type": "SimpleMath+",
+      "pos": [
+        2469.208251953125,
+        353.0569152832031
+      ],
+      "size": [
+        270,
+        98
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "shape": 7,
+          "type": "*",
+          "link": 226
+        },
+        {
+          "name": "b",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        },
+        {
+          "name": "c",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            225
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_essentials",
+        "ver": "9d9f4bedfc9f0321c19faf71855e228c93bd0dc9",
+        "Node name for S&R": "SimpleMath+",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "a+2"
+      ]
+    },
+    {
+      "id": 133,
+      "type": "easy showAnything",
+      "pos": [
+        2781.00244140625,
+        1450.66796875
+      ],
+      "size": [
+        507.9400939941406,
+        324.145751953125
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "anything",
+          "shape": 7,
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "video prompt",
+      "properties": {
+        "cnr_id": "comfyui-easy-use",
+        "ver": "e4ac947d9612ef5d12fb055c0b51b9de8b981deb",
+        "Node name for S&R": "easy showAnything",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 127,
+      "type": "GetNode",
+      "pos": [
+        3219.33056640625,
+        36.03553771972656
+      ],
+      "size": [
+        210,
+        50
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            223
+          ]
+        }
+      ],
+      "title": "Get_image",
+      "properties": {
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "image"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 136,
+      "type": "ThinkSoundFeatureUtilsLoader",
+      "pos": [
+        2256.131591796875,
+        176.2966766357422
+      ],
+      "size": [
+        363.5527648925781,
+        93.96753692626953
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "feature_utils",
+          "type": "THINKSOUND_FEATUREUTILS",
+          "links": [
+            237
+          ]
+        }
+      ],
+      "properties": {
+        "widget_ue_connectable": {},
+        "Node name for S&R": "ThinkSoundFeatureUtilsLoader"
+      },
+      "widgets_values": [
+        "vae.ckpt",
+        "synchformer_state_dict.pth"
+      ]
+    },
+    {
+      "id": 135,
+      "type": "ThinkSoundModelLoader",
+      "pos": [
+        2256.131591796875,
+        45.251731872558594
+      ],
+      "size": [
+        357.58026123046875,
+        75.95120239257812
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "thinksound_model",
+          "type": "THINKSOUND_MODEL",
+          "links": [
+            236
+          ]
+        }
+      ],
+      "properties": {
+        "widget_ue_connectable": {},
+        "Node name for S&R": "ThinkSoundModelLoader"
+      },
+      "widgets_values": [
+        "thinksound_light.ckpt"
+      ]
+    },
+    {
+      "id": 116,
+      "type": "ThinkSoundSampler",
+      "pos": [
+        2684.655029296875,
+        102.49946594238281
+      ],
+      "size": [
+        409.6368713378906,
+        492.2418518066406
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "thinksound_model",
+          "type": "THINKSOUND_MODEL",
+          "link": 236
+        },
+        {
+          "name": "feature_utils",
+          "type": "THINKSOUND_FEATUREUTILS",
+          "link": 237
+        },
+        {
+          "name": "video",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": 222
+        },
+        {
+          "name": "duration",
+          "type": "FLOAT",
+          "widget": {
+            "name": "duration"
+          },
+          "link": 225
+        }
+      ],
+      "outputs": [
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": [
+            190
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ThinkSoundSampler",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        10,
+        35,
+        6,
+        537904462991544,
+        "randomize",
+        "a rock band",
+        "Generate woman singing with a rock band on stage",
+        true
+      ]
+    },
+    {
+      "id": 125,
+      "type": "SetNode",
+      "pos": [
+        2072.189453125,
+        61.905616760253906
+      ],
+      "size": [
+        210,
+        60
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 220
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_image",
+      "properties": {
+        "previousName": "image",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "image"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 91,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        1775.9517822265625,
+        125.6794204711914
+      ],
+      "size": [
+        417.6617736816406,
+        589.1078491210938
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            220
+          ]
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "audio",
+          "type": "AUDIO",
+          "links": null
+        },
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "slot_index": 3,
+          "links": [
+            172
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "7236c5dff09e64dcf8d5946f93d4d7fc4f1a6147",
+        "Node name for S&R": "VHS_LoadVideo",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": {
+        "video": "ltxv-base_00031.mp4",
+        "force_rate": 0,
+        "custom_width": 0,
+        "custom_height": 0,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "format": "Wan",
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "filename": "ltxv-base_00031.mp4",
+            "type": "input",
+            "format": "video/mp4",
+            "select_every_nth": 1
+          },
+          "muted": false
+        }
+      }
+    },
+    {
+      "id": 105,
+      "type": "VHS_VideoInfo",
+      "pos": [
+        2429.791015625,
+        423.6101379394531
+      ],
+      "size": [
+        262,
+        206
+      ],
+      "flags": {
+        "collapsed": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video_info",
+          "type": "VHS_VIDEOINFO",
+          "link": 172
+        }
+      ],
+      "outputs": [
+        {
+          "name": "source_fps🟨",
+          "type": "FLOAT",
+          "links": null
+        },
+        {
+          "name": "source_frame_count🟨",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "source_duration🟨",
+          "type": "FLOAT",
+          "links": []
+        },
+        {
+          "name": "source_width🟨",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "source_height🟨",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "loaded_fps🟦",
+          "type": "FLOAT",
+          "slot_index": 5,
+          "links": [
+            176
+          ]
+        },
+        {
+          "name": "loaded_frame_count🟦",
+          "type": "INT",
+          "slot_index": 6,
+          "links": null
+        },
+        {
+          "name": "loaded_duration🟦",
+          "type": "FLOAT",
+          "slot_index": 7,
+          "links": [
+            226
+          ]
+        },
+        {
+          "name": "loaded_width🟦",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "loaded_height🟦",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "7236c5dff09e64dcf8d5946f93d4d7fc4f1a6147",
+        "Node name for S&R": "VHS_VideoInfo",
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": {}
+    },
+    {
+      "id": 97,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        3151.662353515625,
+        125.6794204711914
+      ],
+      "size": [
+        499.27752685546875,
+        667.5183715820312
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 223
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 190
+        },
+        {
+          "name": "meta_batch",
+          "shape": 7,
+          "type": "VHS_BatchManager",
+          "link": null
+        },
+        {
+          "name": "vae",
+          "shape": 7,
+          "type": "VAE",
+          "link": null
+        },
+        {
+          "name": "frame_rate",
+          "type": "FLOAT",
+          "widget": {
+            "name": "frame_rate"
+          },
+          "link": 176
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-videohelpersuite",
+        "ver": "7236c5dff09e64dcf8d5946f93d4d7fc4f1a6147",
+        "Node name for S&R": "VHS_VideoCombine",
+        "widget_ue_connectable": {
+          "frame_rate": true
+        }
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "ThinkSound",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 19,
+        "save_metadata": true,
+        "trim_to_audio": false,
+        "pingpong": false,
+        "save_output": false,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "MMaudio_00003-audio.mp4",
+            "subfolder": "",
+            "type": "temp",
+            "format": "video/h264-mp4",
+            "frame_rate": 24,
+            "workflow": "MMaudio_00003.png",
+            "fullpath": "D:\\ComfyUI_windows\\ComfyUI\\temp\\MMaudio_00003-audio.mp4"
+          },
+          "muted": false
+        }
+      }
+    }
+  ],
+  "links": [
+    [
+      172,
+      91,
+      3,
+      105,
+      0,
+      "VHS_VIDEOINFO"
+    ],
+    [
+      176,
+      105,
+      5,
+      97,
+      4,
+      "FLOAT"
+    ],
+    [
+      190,
+      116,
+      0,
+      97,
+      1,
+      "AUDIO"
+    ],
+    [
+      220,
+      91,
+      0,
+      125,
+      0,
+      "*"
+    ],
+    [
+      222,
+      126,
+      0,
+      116,
+      2,
+      "IMAGE"
+    ],
+    [
+      223,
+      127,
+      0,
+      97,
+      0,
+      "IMAGE"
+    ],
+    [
+      225,
+      128,
+      1,
+      116,
+      3,
+      "FLOAT"
+    ],
+    [
+      226,
+      105,
+      7,
+      128,
+      0,
+      "*"
+    ],
+    [
+      236,
+      135,
+      0,
+      116,
+      0,
+      "THINKSOUND_MODEL"
+    ],
+    [
+      237,
+      136,
+      0,
+      116,
+      1,
+      "THINKSOUND_FEATUREUTILS"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.8769226950000008,
+      "offset": [
+        -1371.2907858581623,
+        157.46913746868347
+      ]
+    },
+    "ue_links": [],
+    "frontendVersion": "1.23.4",
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true,
+    "links_added_by_ue": [],
+    "groupNodes": {}
+  },
+  "version": 0.4
+}
