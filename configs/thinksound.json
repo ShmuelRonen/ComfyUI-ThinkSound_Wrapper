@@ -1,0 +1,101 @@
+{
+    "model_type": "mm_diffusion_cond",
+    "sample_size": 397312,
+    "sample_rate": 44100,
+    "audio_channels": 2,
+    "model": {
+        "pretransform": {
+            "type": "autoencoder",
+            "iterate_batch": true,
+            "config": {
+                "encoder": {
+                    "type": "oobleck",
+                    "config": {
+                        "in_channels": 2,
+                        "channels": 128,
+                        "c_mults": [1, 2, 4, 8, 16],
+                        "strides": [2, 4, 4, 8, 8],
+                        "latent_dim": 128,
+                        "use_snake": true
+                    }
+                },
+                "decoder": {
+                    "type": "oobleck",
+                    "config": {
+                        "out_channels": 2,
+                        "channels": 128,
+                        "c_mults": [1, 2, 4, 8, 16],
+                        "strides": [2, 4, 4, 8, 8],
+                        "latent_dim": 64,
+                        "use_snake": true,
+                        "final_tanh": false
+                    }
+                },
+                "bottleneck": {
+                    "type": "vae"
+                },
+                "latent_dim": 64,
+                "downsampling_ratio": 2048,
+                "io_channels": 2
+            }
+        },
+        "conditioning": {
+            "configs": [
+                {
+                    "id": "metaclip_features",
+                    "type": "mm_unchang",
+                    "config": {
+                        "dim": 1024,
+                        "output_dim": 1024
+                    }
+                },
+                {
+                    "id": "metaclip_text_features",
+                    "type": "mm_unchang",
+                    "config": {
+                        "dim": 1024,
+                        "output_dim": 1024
+                    }
+                },
+                {
+                    "id": "sync_features",
+                    "type": "mm_unchang",
+                    "config": {
+                        "dim": 768,
+                        "output_dim": 768
+                    }
+                },
+                {
+                    "id": "t5_features",
+                    "type": "mm_unchang",
+                    "config": {
+                        "dim": 2048,
+                        "output_dim": 2048
+                    }
+                }
+            ],
+            "cond_dim": 768
+        },
+        "diffusion": {
+            "mm_cond_ids": ["metaclip_features", "sync_features", "metaclip_text_features", "t5_features"],
+            "type": "mmdit",
+            "diffusion_objective": "rectified_flow",
+            "config": {
+                "latent_dim": 64,
+                "clip_dim": 1024,
+                "sync_dim": 768,
+                "text_dim": 2048,
+                "hidden_dim": 1024,
+                "depth": 21,
+                "fused_depth": 14,
+                "num_heads": 16,
+                "latent_seq_len": 194,
+                "clip_seq_len": 72,
+                "sync_seq_len": 216,
+                "v2": true,
+                "kernel_size": 3
+            }
+        },
+        "io_channels": 64
+    }
+}
