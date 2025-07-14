@@ -7,6 +7,9 @@ A ComfyUI wrapper implementation of **ThinkSound** - an advanced AI model for ge
 
 https://github.com/user-attachments/assets/b3f090a7-fe58-4bb0-8e21-cb19377aa9cf
 
+### 14.02.25 - Add the ability to use the big model: thinksound.ckpt
+- you can download it from here: https://huggingface.co/FunAudioLLM/ThinkSound/resolve/main/thinksound.ckpt?download=true
+
 
 
 
